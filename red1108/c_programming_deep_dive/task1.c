@@ -27,19 +27,22 @@ int main(void) {
         printf("long long: %zu bytes\n", sizeof(long long));
         printf("float: %zu bytes\n", sizeof(float));
         printf("double: %zu bytes\n", sizeof(double));
-    } else if(strcmp(mode, "pointers")==0 || strcmp(mode, "all")==0) {
+    } if(strcmp(mode, "pointers")==0 || strcmp(mode, "all")==0) {
         printf("int*: %zu bytes\n", sizeof(int*));
         printf("char*: %zu bytes\n", sizeof(char*));
         printf("double*: %zu bytes\n", sizeof(double*));
 
-    } else if(strcmp(mode, "arrays")==0 || strcmp(mode, "all")==0) {
+    } if(strcmp(mode, "arrays")==0 || strcmp(mode, "all")==0) {
         printf("int[10]: %zu bytes\n", sizeof(int[10]));
         printf("char[10]: %zu bytes\n", sizeof(char[10]));
         printf("double[5]: %zu bytes\n", sizeof(double[5]));
-    } else if(strcmp(mode, "struct")==0 || strcmp(mode, "all")==0) {
+    } if(strcmp(mode, "struct")==0 || strcmp(mode, "all")==0) {
         printf("struct: %zu bytes\n", sizeof(struct MyStruct));
         printf("sizeof(2 + 3.5): %zu\n", sizeof(2+3.5));
         printf("sizeof(\"hello\"): %zu\n", sizeof("hello"));
+    }
+    if(strcmp(mode, "all") == 0){
+        printf("All sizes printed correctly\n");
     }
     return 0;
 }
